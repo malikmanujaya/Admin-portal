@@ -15,9 +15,20 @@ function getCookie(name: string): string | undefined {
 // ✅ Add token to every request
 API.interceptors.request.use((config) => {
   const token = getCookie("access_token");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+
+  // Do NOT attach token for these endpoints
+  const excludedPaths = ["/auth/login", "/auth/refresh", "/auth/logout"];
+  const isExcluded = excludedPaths.some((path) =>
+    config.url?.includes(path)
+  );
+
+  if (token && !isExcluded) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
   return config;
 });
+
 
 // 🔁 Handle 401s and auto-refresh once
 let isRefreshing = false;

@@ -32,12 +32,12 @@ export function Logo() {
         </h1> */}
 
 <h1 className="mb-0.5 text-heading-5 font-bold text-dark dark:hidden">
-    AIA
+Admin Portal
   </h1>
 
   {/* Dark Mode Text */}
   <h1 className="mb-0.5 text-heading-5 font-bold text-white hidden dark:block">
-    AIA
+  Admin Portal
   </h1>
 
     </div>

@@ -10,10 +10,10 @@ import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | AIA",
-    default: "AIA",
+    template: "%s | Admin Portal",
+    default: "Admin Portal",
   },
-  description: "Unified layout shell",
+  description: "Admin portal layout",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

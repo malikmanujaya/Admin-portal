@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function SignIn() {
   return (
     <>
-      <Breadcrumb pageName="Sign In" />
+      {/* <Breadcrumb pageName="Sign In" /> */}
 
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
         <div className="flex flex-wrap items-center">
@@ -21,7 +21,7 @@ export default function SignIn() {
 
           <div className="hidden w-full p-7.5 xl:block xl:w-1/2">
             <div className="custom-gradient-1 overflow-hidden rounded-2xl px-12.5 pt-12.5 dark:!bg-dark-2 dark:bg-none">
-              <Link className="mb-10 inline-block" href="/">
+              {/* <Link className="mb-10 inline-block" href="/">
                 <Image
                   className="hidden dark:block"
                   src={"/images/logo/logo.svg"}
@@ -36,7 +36,17 @@ export default function SignIn() {
                   width={176}
                   height={32}
                 />
-              </Link>
+              </Link> */}
+<Link className="mb-10 inline-block" href="/">
+<h1 className="mb-0.5 text-heading-5 font-bold text-dark dark:hidden">
+    Admin Portal
+  </h1>
+
+  {/* Dark Mode Text */}
+  <h1 className="mb-0.5 text-heading-5 font-bold text-white hidden dark:block">
+  Admin Portal
+  </h1>
+  </Link>
 
               <p className="mb-3 text-xl font-medium text-dark dark:text-white">
                 Sign in to your account

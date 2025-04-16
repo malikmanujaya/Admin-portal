@@ -9,6 +9,8 @@ import { ChatsCard } from "./_components/chats-card";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 type PropsType = {
   searchParams: Promise<{
@@ -16,7 +18,14 @@ type PropsType = {
   }>;
 };
 
-export default async function Home({ searchParams }: PropsType) {
+export default async function Dashboard({ searchParams }: PropsType) {
+
+  const token = (await cookies()).get("access_token")?.value;
+
+  if (!token) {
+    redirect("/auth/sign-in");
+  }
+
   const { selected_time_frame } = await searchParams;
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 

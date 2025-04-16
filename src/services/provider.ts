@@ -2,8 +2,14 @@ import axios from "axios";
 import { handleResponse, handleError } from "./response";
 import { refreshAccessToken } from "@/services/auth/directusAuthService";
 
+const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+if (!baseURL) {
+  throw new Error("🚨 Missing NEXT_PUBLIC_API_BASE_URL in environment config");
+}
+
 const API = axios.create({
-  baseURL: "https://uat-healthcare.hemashospitals.com",
+  baseURL,
   timeout: 10000,
 });
 

@@ -1,12 +1,12 @@
 // src/app/(auth)/auth/sign-in/page.tsx
 "use client";
 
-import Signin from "@/components/Auth/Signin";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
 import Link from "next/link";
+import { SignUpForm } from "./_components/sign-up-form";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <>
       {/* <Breadcrumb pageName="Sign In" /> */}
@@ -15,7 +15,7 @@ export default function SignIn() {
         <div className="flex flex-wrap items-center">
           <div className="w-full xl:w-1/3">
             <div className="w-full p-4 sm:p-12.5 xl:p-15">
-              <Signin />
+              <SignUpForm />
             </div>
           </div>
 
@@ -49,7 +49,7 @@ export default function SignIn() {
   </Link>
 
               <p className="mb-3 text-xl font-medium text-dark dark:text-white">
-                Sign in to your account
+                Sign up to create your account
               </p>
 
               <h1 className="mb-4 text-2xl font-bold text-dark dark:text-white sm:text-heading-3">
@@ -57,8 +57,7 @@ export default function SignIn() {
               </h1>
 
               <p className="w-full max-w-[375px] font-medium text-dark-4 dark:text-dark-6">
-                Please sign in to your account by completing the necessary
-                fields below
+              For create your account please fill up the necessary fields below
               </p>
 
               <div className="mt-31">

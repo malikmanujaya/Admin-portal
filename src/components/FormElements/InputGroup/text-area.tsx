@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { useId } from "react";
 
 interface PropsType {
+  id?: string;
   label: string;
   placeholder: string;
   required?: boolean;
@@ -13,6 +14,7 @@ interface PropsType {
 }
 
 export function TextAreaGroup({
+  id,
   label,
   placeholder,
   required,
@@ -22,12 +24,14 @@ export function TextAreaGroup({
   icon,
   defaultValue,
 }: PropsType) {
-  const id = useId();
+
+  const generatedId = useId();
+  const inputId = id || generatedId;
 
   return (
     <div className={cn(className)}>
       <label
-        htmlFor={id}
+        htmlFor={inputId}
         className="mb-3 block text-body-sm font-medium text-dark dark:text-white"
       >
         {label}
@@ -35,7 +39,7 @@ export function TextAreaGroup({
 
       <div className="relative mt-3 [&_svg]:pointer-events-none [&_svg]:absolute [&_svg]:left-5.5 [&_svg]:top-5.5">
         <textarea
-          id={id}
+          id={inputId}
           rows={6}
           placeholder={placeholder}
           defaultValue={defaultValue}

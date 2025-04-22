@@ -49,6 +49,7 @@ export default function SigninWithPassword() {
   return (
     <form onSubmit={handleSubmit}>
       <InputGroup
+        id="email"
         type="email"
         label="Email"
         className="mb-4 [&_input]:py-[15px]"
@@ -60,6 +61,7 @@ export default function SigninWithPassword() {
       />
 
       <InputGroup
+        id="password"
         type="password"
         label="Password"
         className="mb-5 [&_input]:py-[15px]"
